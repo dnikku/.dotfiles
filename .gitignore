@@ -1,0 +1,9 @@
+*.el~
+/emacs/ido.last
+/emacs/places
+/emacs/backups
+/emacs/elpa
+/emacs/history
+/emacs/.emacs.desktop
+/emacs/eshell
+/emacs/server/
