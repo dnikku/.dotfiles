@@ -1,0 +1,56 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=10000
+bindkey -e
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/ndascalu/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+
+##
+DIRSTACKSIZE=8
+setopt autopushd pushdminus pushdsilent pushdtohome
+alias dh='dirs -v'
+alias ls='ls -G --color=auto'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias grep='grep --color=auto'
+
+alias ec='~/.emacs.d/start-client.sh'
+alias emacs='emacs -nw'
+
+alias tree='tree -C'
+
+autoload -U colors
+colors
+
+#
+#PROMPT="%F{cyan}%2~ %#%f "
+
+if [[ `whoami` = root ]] then
+    a1="%{$fg_no_bold[red]%}"
+    a2="%{$fg_bold[red]%}"
+else
+    a1="%{$fg_no_bold[cyan]%}"
+    a2="%{$fg_bold[cyan]%}"
+fi
+
+
+PROMPT="${a1}[----%n@%m:$a2%~ $a1----]
+$%{$reset_color%} "
+
+#RPROMPT="%D{%H:%M} %D{%d/%m}"
+RPROMPT=""
+
+
+export TERM=xterm-256color
+
+#autoload -U promptinit
+#promptinit
+#prompt <promptname>
