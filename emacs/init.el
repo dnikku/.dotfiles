@@ -36,19 +36,12 @@
 
 (require-package 'diminish)
 
-
+(require 'init-themes)
 (require 'init-eshell)
 (require 'init-windows)
 (require 'init-sessions)
 
 (require 'init-devel)
-
-
-;;; set default theme
-(maybe-require-package 'material-theme)
-(when (require 'material-theme nil t)
-  (load-theme 'material t)
-  (message "load-theme 'material done."))
 
 
 ;;; load variables set via 'customize' interface
