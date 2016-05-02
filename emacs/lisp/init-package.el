@@ -10,8 +10,8 @@
 (let ((repos
        (list
         '("gnu" . "http://elpa.gnu.org/packages/")
-        '("melpa" . "http://melpa.org/packages/")
-        '("elpy" . "https://jorgenschaefer.github.io/packages/")
+        '("melpa-stable" . "https://stable.melpa.org/packages/")
+        ;;'("elpy" . "https://jorgenschaefer.github.io/packages/")
         ;;'("marmalade" . "http://marmalade-repo.org/packages/")
         ;;'("org" . "http://orgmode.org/elpa/")
         )))
