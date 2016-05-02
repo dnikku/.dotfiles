@@ -1,4 +1,5 @@
 *.el~
+*.elc
 /emacs/ido.last
 /emacs/places
 /emacs/backups
