@@ -36,7 +36,7 @@
 ;;; programing lang modes
 (require 'init-python)
 (require 'init-web-mode)
-
+(require 'init-clojure)
 ;;;(require 'init-golang)
 (require 'init-git)
 
