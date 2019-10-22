@@ -32,6 +32,8 @@
 (global-undo-tree-mode)
 (diminish 'undo-tree-mode)
 
+;;; stop creating ~ files
+(setq make-backup-files nil)
 
 ;;; programing lang modes
 (require 'init-python)

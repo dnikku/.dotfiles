@@ -27,7 +27,13 @@
 (global-hl-line-mode 1) ;; global highlight current line
 (setq column-number-mode t) ;; show column
 (menu-bar-mode -1) ;; hide menu bar
+(tool-bar-mode -1) ;; hide tool bar
+(scroll-bar-mode -1) ;; hide scroll bar
 (defalias 'yes-or-no-p 'y-or-n-p)
+(set-face-attribute 'default nil :height 120) ;; increase font-size
+
+;; disable C-z
+(global-unset-key (kbd "C-z"))
 
 
 (require 'init-utils)
