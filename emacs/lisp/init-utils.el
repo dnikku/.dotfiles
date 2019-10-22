@@ -57,6 +57,10 @@
   "Turn off display of trailing whitespace in this buffer."
   (setq show-trailing-whitespace nil))
 
+(defun dos2unix ()
+  "Simple convertor of file-encodings convertor."
+  (interactive)
+  (set-buffer-file-coding-system 'unix 't) )
 
 (provide 'init-utils)
 ;;; init-utils ends here

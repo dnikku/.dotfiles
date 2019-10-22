@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-(defun eshell-clear ()
+(defun mysh-clear ()
   "Helper function to clear eshell screen."
   (let ((inhibit-read-only t))
     (erase-buffer)))
