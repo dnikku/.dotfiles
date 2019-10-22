@@ -8,3 +8,5 @@
 /emacs/.emacs.desktop
 /emacs/eshell
 /emacs/server/
+/emacs/auto-save-list
+/emacs/.session
