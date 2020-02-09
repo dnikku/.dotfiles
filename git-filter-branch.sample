@@ -1,0 +1,1 @@
+git filter-branch --msg-filter 'printf PREFIX:  && cat' start..HEAD
