@@ -19,13 +19,21 @@
     untracked = cyan
 
 [core]
-	editor = vim
+    editor = vim
+    autocrlf = true
+    # autocrlf = false
+    # whitespace = cr-at-eol
+
+
+[diff "archive"]
+    textconv = 7z.exe -so e
+    binary = true
 
 
 [alias]
     st = status
     ci = commit
-    am = commit --amend
+    ci-amend = commit --amend --no-edit
     br = branch
     co = checkout
 
@@ -38,7 +46,13 @@
     lola-medium = log --graph --decorate --pretty=medium --abbrev-commit --date-order --all
 
     lol = log --graph --format='"%C(bold #227777)%h %d%Creset %s %C(#555555)[%an, %ad(%ar)]%Creset"' --date-order --date=format:'%Y-%m-%dT%H:%M:%S'
-    lola = log --graph --format='"%C(bold #227777)%h %d%Creset %s %C(#555555)[%an, %ad(%ar)]%Creset"' --date-order --date=format:'%Y-%m-%dT%H:%M:%S' --all
+    lol5 = log -5 --graph --format='"%C(bold #227777)%h %d%Creset %s %C(#555555)[%an, %ad(%ar)]%Creset"' --date-order --date=format:'%Y-%m-%dT%H:%M:%S'
+
+    lola = log --graph --format='"%C(bold #227777)%h %d%Creset %s %C(#555555)[%an, %ad(%ar)]%Creset"' --date=format:'%Y-%m-%dT%H:%M:%S' --all
+    lola10 = log -10 --graph --format='"%C(bold #227777)%h %d%Creset %s %C(#555555)[%an, %ad(%ar)]%Creset"' --date=format:'%Y-%m-%dT%H:%M:%S' --all
+
+    # first-parent
+    lola1 = log --first-parent --graph --format='"%C(bold #227777)%h %d%Creset %s %C(#555555)[%an, %ad(%ar)]%Creset"' --date=format:'%Y-%m-%dT%H:%M:%S' --all
     ls = ls-files
 
 
