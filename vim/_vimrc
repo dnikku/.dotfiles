@@ -1,0 +1,40 @@
+
+set nocompatible
+
+syntax on
+
+set shell=bash
+
+let mapleader = " "
+
+set showmode
+set tabstop=4
+set expandtab
+
+" turn hybrid line numbers on, see: https://jeffkreeftmeijer.com/vim-number/
+set nu rnu
+
+" disable recording for now
+map q <nop>
+
+" remap to 0 to first non-blank char
+map 0 ^ 
+
+" fast saving
+nmap <leader>w :w!<cr>
+
+
+" edit/reload vimrc config file
+nnoremap <leader>ve :e ~/.vimrc<cr>
+nnoremap <leader>vr :so ~/.vimrc<cr>
+
+nnoremap <leader>help :vert help<cr>
+
+" windows management, see: https://thoughtbot.com/blog/vim-splits-move-faster-and-more-naturally
+set splitright
+
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+map <leader>h :bprevious<cr>
+map <leader>l :bnext<cr>
+
