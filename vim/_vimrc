@@ -4,6 +4,17 @@ set nocompatible
 syntax on
 
 set shell=bash
+if has("gui_win32")
+    set packpath+=$HOME/.vim/
+    set guifont=Consolas:h12:cANSI
+endif
+
+
+" setup solarived8 color scheme
+:packadd solarized8
+set background=light
+colorscheme solarized8
+
 
 let mapleader = " "
 
