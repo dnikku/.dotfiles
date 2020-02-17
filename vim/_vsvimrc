@@ -1,0 +1,66 @@
+
+let mapleader = " "
+set clipboard=unnamed
+set backspace=indent,eol,start
+set tabstop=4
+set expandtab
+
+
+" ui layout
+set laststatus=2
+set nocursorline
+
+
+" searching
+set ignorecase
+set incsearch  " search as chars are entered
+set hlsearch   " highlight all matches
+
+
+" disable recording for now
+map q <nop>
+
+" remap to 0 to first non-blank char
+map 0 ^ 
+
+" arrows are unvimlike
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+
+
+" fast saving
+nmap <leader>w :w!<cr>
+
+
+" edit/reload vimrc config file
+nnoremap <leader>ve :e ~/.vimrc<cr>
+nnoremap <leader>vr :so ~/.vimrc<cr>
+
+nnoremap <leader>help :vert help<cr>
+
+" windows management, see: https://thoughtbot.com/blog/vim-splits-move-faster-and-more-naturally
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+map <leader>h :bprevious<cr>
+map <leader>l :bnext<cr>
+
+
+" see: https://fuqua.io/blog/2017/08/level-up-your-vsvim/
+" break out of the tyranny of text! Navigate by method
+nnoremap <leader>m :vsc Edit.NextMethod<cr>
+nnoremap <leader>M :vsc Edit.PreviousMethod<cr>
+
+" jump between compilation errors
+nnoremap <leader>e :vsc View.NextError<cr>
+nnoremap <leader>E :vsc View.PreviousError<cr>
+
+" testing and debugging
+nnoremap <leader>b :vsc Debug.ToggleBreakpoint<cr>
+nnoremap <leader>r :vsc TestExplorer.RunAllTestsInContext<cr>
+nnoremap <leader>R :vsc TestExplorer.DebugAllTestsInContext<cr>
+
+" open the change parameter window, a bit fake because it's not a text-object
+nnoremap cia :vsc Refactor.ReorderParameters<cr>noremap R :vsc Refactor.Rename<cr>
+
