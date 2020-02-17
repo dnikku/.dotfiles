@@ -7,6 +7,10 @@ set shell=bash
 if has("gui_win32")
     set packpath+=$HOME/.vim/
     set guifont=Consolas:h12:cANSI
+    "set guioptions-=m  "menu bar
+    set guioptions-=T  "toolbar
+    set guioptions-=r  "scrollbarset
+    :simalt ~x          "maximized window
 endif
 
 
@@ -17,19 +21,41 @@ colorscheme solarized8
 
 
 let mapleader = " "
-
+set clipboard=unnamed
+set backspace=indent,eol,start
 set showmode
 set tabstop=4
 set expandtab
 
+
+" ui layout
+set laststatus=2
+set showcmd
+set nocursorline
+set showmatch " highlight matching parenthesis
+
 " turn hybrid line numbers on, see: https://jeffkreeftmeijer.com/vim-number/
 set nu rnu
+
+
+" searching
+set ignorecase
+set incsearch  " search as chars are entered
+set hlsearch   " highlight all matches
+
 
 " disable recording for now
 map q <nop>
 
 " remap to 0 to first non-blank char
 map 0 ^ 
+
+" arrows are unvimlike
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+
 
 " fast saving
 nmap <leader>w :w!<cr>
@@ -49,3 +75,6 @@ map <C-l> <C-W>l
 map <leader>h :bprevious<cr>
 map <leader>l :bnext<cr>
 
+
+" disable swapfiles
+set noswapfile
