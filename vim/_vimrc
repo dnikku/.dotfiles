@@ -12,7 +12,7 @@ endif
 
 " setup solarived8 color scheme
 :packadd solarized8
-set background=light
+set background=dark
 colorscheme solarized8
 
 
