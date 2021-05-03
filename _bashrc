@@ -5,9 +5,16 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+mkdir -p ~/.nd-logs
+
 alias ls='ls --color=auto'
 alias xterm='(cd ~ && nohup xterm)&' 
 alias vi='vim -X'
+alias run-bashrc='source ~/.bashrc'
+alias run-idea='nohup ~/idea-ultimate/ideaIU/bin/idea.sh > ~/.nd-logs/idea.log 2>&1  &'
+alias kill-idea='~/.dotfiles/kill-idea.sh'
+alias run-chrome='nohup google-chrome-stable --disable-gpu > ~/.nd-logs/chrome.log 2>%1  &'
+
 
 #PS1='[\u@\h \W]\$ '
 
@@ -17,4 +24,7 @@ __git_ps1() {
 PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[35m\]$MSYSTEM \[\033[33m\]\w\[\033[36m\] `__git_ps1`\[\033[0m\]\n$ '
 
 export DISPLAY=dascalu1a:0.0
+
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
+export PATH=$PATH:$JAVA_HOME/bin:/var/lib/snapd/snap/bin
 
