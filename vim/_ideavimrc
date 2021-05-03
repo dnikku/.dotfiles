@@ -9,6 +9,7 @@ set expandtab
 " ui layout
 set laststatus=2
 set nocursorline
+set showmode
 
 
 " searching
@@ -24,26 +25,50 @@ map q <nop>
 map 0 ^ 
 
 " arrows are unvimlike
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <PageUp> <nop>
-inoremap <PageDown> <nop>
-nnoremap <PageUp> <nop>
-nnoremap <PageDown> <nop>
+nmap <up> <nop>
+nmap <down> <nop>
+nmap <left> <nop>
+nmap <right> <nop>
+imap <PageUp> <nop>
+imap <PageDown> <nop>
+nmap <PageUp> <nop>
+nmap <PageDown> <nop>
 
 " reload vimrc config file
-nnoremap <leader>rr :so ~/.vsvimrc<cr>
+nmap <leader>so :so ~/.ideavimrc
 
 " fast saving
 nmap <leader>w :w!<cr>
 
-" my msdev shortcuts
+" my idea shortcuts
 "
-"nnoremap <leader>b :vsc Build.BuildSelection<cr>
-"nnoremap <leader>bb :vsc Build.RebuildSelection<cr>
+nmap <leader>al :actionlist
 
+" some goto/search actions
+nmap <leader>gf :action FindInPath<cr>
+nmap <leader>ga :action SearchEverywhere<cr>
+nmap <leader>gc :action GotoClass<cr>
+nmap <leader>gs :action GotoSymbol<cr>
+nmap <leader>gi :action GotoImplementation<cr>
+nmap <leader>gd :action GotoDeclaration<cr>
+nmap <leader>fu :action FindUsages<cr>
+
+" some refactoring actions
+nmap <leader>rc :action ReformatCode<cr>
+nmap <leader>rr :action RenameElement<cr>
+nmap <leader>ff :action ShowIntentionActions<cr>
+
+nmap <leader>cc :action CommentByLineComment<cr>
+
+" idea shortcuts
+"
+" :sp/:vsp       -> horizontal/vertical split current file
+" :vsp file      -> vertical split provided filename
+" :o   file      -> open file
+" g t            -> next tab
+" g T            -> prev tab
+" <nn> g t       -> tab with index nn
+" <C-w> j/k/h/l  -> j-down, k-up, h-left, l-right window 
 
 
 " windows management, see: https://thoughtbot.com/blog/vim-splits-move-faster-and-more-naturally
