@@ -10,7 +10,7 @@ MIN="$2"
 DATE=$(date -d "$HOUR $MIN minutes")
 echo "commit date: $DATE"
 
-#GIT_COMMITTER_DATE="$DATE" git commit --amend --no-edit --date "$DATE"
+GIT_COMMITTER_DATE="$DATE" git commit --amend --no-edit --date "$DATE"
 
-#git rebase --continue
+git rebase --continue
 
