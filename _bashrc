@@ -15,7 +15,6 @@ alias run-idea='nohup ~/idea-ultimate/ideaIU/bin/idea.sh > ~/.nd-logs/idea.log 2
 alias kill-idea='~/.dotfiles/kill-idea.sh'
 alias run-chrome='nohup google-chrome-stable --disable-gpu > ~/.nd-logs/chrome.log 2>%1  &'
 
-
 #PS1='[\u@\h \W]\$ '
 
 __git_ps1() {
@@ -28,3 +27,4 @@ export DISPLAY=dascalu1a:0.0
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
 export PATH=$PATH:$JAVA_HOME/bin:/var/lib/snapd/snap/bin
 
+export PATH=$PATH:~/bin
