@@ -1,6 +1,6 @@
 
 set nocompatible
-
+filetype plugin on "https://susam.in/blog/lisp-in-vim-with-slimv-or-vlime/#vim-plugin-management
 syntax on
 
 set shell=bash
@@ -24,7 +24,7 @@ set fileencoding=utf-8
 
 " setup solarived8 color scheme
 :packadd solarized8
-set background=dark
+set background=light
 colorscheme solarized8
 
 
@@ -70,8 +70,10 @@ nmap <leader>w :w!<cr>
 
 
 " edit/reload vimrc config file
-nnoremap <leader>ve :e ~/.vimrc<cr>
-nnoremap <leader>vr :so ~/.vimrc<cr>
+nmap <leader>se :e ~/.vimrc<cr>
+nmap <leader>so :so ~/.vimrc<cr>
+
+nmap <leader>rc gg=G
 
 nnoremap <leader>help :vert help<cr>
 
