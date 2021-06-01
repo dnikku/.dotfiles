@@ -2,12 +2,9 @@
 
 # rewrite current commit author/committer date: now +/- hours/minutes
 
-#date -d "16:00 410 minutes"
+#date 2021-05-20T14:35:48+0200
 
-HOUR="$1"
-MIN="$2"
-
-DATE=$(date -d "$HOUR $MIN minutes")
+DATE="$1"
 echo "commit date: $DATE"
 
 GIT_COMMITTER_DATE="$DATE" git commit --amend --no-edit --date "$DATE"
