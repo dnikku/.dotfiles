@@ -5,6 +5,7 @@
 #;; see: https://susam.in/blog/lisp-in-vim-with-slimv-or-vlime/#get-started-with-paredit
 #;; see: https://github.com/emezeske/paredit.vim/blob/master/doc/paredit.txt
 
+(load "@lib/misc.l")
 
 #;; Str -> (T StartChunk) | (NIL NextChunk)
 (de parse-line (Str)
