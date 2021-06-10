@@ -17,9 +17,6 @@
     (let (Last NIL Idx 0)
       (until (eof)
              (let ((StartChunk? Str) (parse-line (line T)))
-               #;; replace com.ceyoniq.nscale -> .
-               (if (match (append '(@A) (chop "com.ceyoniq.nscale.") '(@B)) (chop Str))
-                 (setq Str (pack @A "." @B)))
 
                (cond 
                  (StartChunk? (when Last 
