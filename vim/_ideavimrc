@@ -38,7 +38,8 @@ nmap <PageDown> <nop>
 nmap <leader>so :so ~/.ideavimrc
 
 " fast saving
-nmap <leader>w :w!<cr>
+map <leader>w :w!<cr>
+map! <leader>w :w!<cr>
 
 " my idea shortcuts
 "
@@ -53,12 +54,12 @@ nmap <leader>gi :action GotoImplementation<cr>
 nmap <leader>gd :action GotoDeclaration<cr>
 nmap <leader>fu :action FindUsages<cr>
 
-" some refactoring actions
-nmap <leader>rc :action ReformatCode<cr>
+" some refactoring actions htnsh
+nmap <leader>rf :action ReformatCode | w
 nmap <leader>rr :action RenameElement<cr>
-nmap <leader>ff :action ShowIntentionActions<cr>
+map! <leader>rs :action ShowIntentionActions<cr>
 
-nmap <leader>cc :action CommentByLineComment<cr>
+map <leader>cc :action CommentByLineComment<cr>
 
 " idea shortcuts
 "

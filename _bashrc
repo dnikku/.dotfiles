@@ -11,7 +11,7 @@ alias ls='ls --color=auto'
 alias xterm='(cd ~ && nohup xterm)&' 
 alias vi='vim -X'
 alias run-bashrc='source ~/.bashrc'
-alias run-idea='nohup ~/idea-ultimate/ideaIU/bin/idea.sh > ~/.nd-logs/idea.log 2>&1  &'
+alias run-idea='nohup ~/bin/ideaIU/bin/idea.sh > ~/.nd-logs/idea.log 2>&1  &'
 alias kill-idea='~/.dotfiles/kill-idea.sh'
 alias run-chrome='nohup google-chrome-stable --disable-gpu > ~/.nd-logs/chrome.log 2>%1  &'
 
