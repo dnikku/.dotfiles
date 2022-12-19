@@ -37,12 +37,20 @@ else
     a1="%{$fg_no_bold[cyan]%}"
     a2="%{$fg_bold[cyan]%}"
 fi
+a3="%{$fg_bold[green]%}"
+
+# Load version control information
+autoload -Uz vcs_info
+precmd() { vcs_info }
+
+# Format the vcs_info_msg_0_ variable
+zstyle ':vcs_info:git:*' formats "$a3(git: %b)$a1"
 
 
-PROMPT="${a1}[----%n@%m:$a2%~ $a1----]
+PROMPT="${a1}[%n@%m:$a2%~ $a1 ${vcs_info_msg_0_}]
 $%{$reset_color%} "
 
-#RPROMPT="%D{%H:%M} %D{%d/%m}"
+#RPROMPT="%D{%H:%M:%S}"
 RPROMPT=""
 
 
