@@ -31,10 +31,22 @@ __nvm_ps1() {
 PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[35m\]$MSYSTEM \[\033[33m\]\w\[\033[36m\] `__git_ps1``__nvm_ps1`\[\033[0m\]\n$ '
 
 
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
-export PATH=$PATH:$JAVA_HOME/bin:~/bin
+#export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+export PATH=$PATH:$JAVA_HOME/bin:~/bin:.
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-#source <(kubectl completion bash)
+
+
+
+## nicu's k8s config for all cluster: prod, dev, local-vm
+export KUBECONFIG=$(ls ~/.kube/kubeconfig-* | tr '\n' ':' | sed 's/:$/\n/')
+
+export PATH=/c/work/projects/asy-vpc/k8s:$PATH
+
+# setup autocomplete
+source <(kubectl completion bash)
+alias k=kubectl
+complete -o default -F __start_kubectl k
+
