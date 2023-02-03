@@ -5,36 +5,57 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-mkdir -p ~/.nd-logs
+# load custom settings if exists
+[ -f "$HOME/.bashrc.local" ] && . "$HOME/.bashrc.local"
+
 
 alias ls='ls --color=auto'
 alias xterm='(cd ~ && nohup xterm)&' 
 alias vi='vim -X'
 
-alias run-idea='nohup intellij-idea-ultimate > ~/.nd-logs/idea.log 2>&1  &'
-alias kill-idea='~/.dotfiles/kill-idea.sh'
-alias run-chrome='nohup google-chrome-stable --disable-gpu > ~/.nd-logs/chrome.log 2>%1  &'
-#alias kubectl='~/work/nscale/n-k3s/.bin/kubectl --kubeconfig ~/work/nscale/n-k3s/.bin/cluster.yaml'
-
-export DISPLAY=dascalu1a:0.0
 
 #PS1='[\u@\h \W]\$ '
 
 __git_ps1() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 __nvm_ps1() {
     if [ -s "$NVM_DIR/nvm.sh" ]; then
             echo " (nvm: $(nvm current))"
     fi
 }
-PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[35m\]$MSYSTEM \[\033[33m\]\w\[\033[36m\] `__git_ps1``__nvm_ps1`\[\033[0m\]\n$ '
+__k_ps1() {
+        echo " [$(k config current-context)]"
+}
+PS1='\[\033[33m\]\w\[\033[35m\]`__k_ps1`\[\033[36m\]`__nvm_ps1``__git_ps1`\[\033[0m\]\n$ '
 
-
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
-export PATH=$PATH:$JAVA_HOME/bin:~/bin
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-#source <(kubectl completion bash)
+
+
+# setup autocomplete
+source <(kubectl completion bash)
+alias k='kubectl'
+complete -o default -F __start_kubectl k
+
+alias k-flux-reco='flux reconcile source git app-install'
+alias k-restart-deployment='k rollout restart deployment'
+
+function k-logs() { # simulate alias via a function because an alias could not take parameter
+  k logs --timestamps -l app.kubernetes.io/instance=$1 --since=0
+}
+
+
+export PATH=$PATH:$HOME/.krew/bin
+
+alias g-rebase='git fetch --prune; git rebase origin/main'
+
+function g-trigger() {
+    BR=$1
+    git push origin HEAD:$1 -f 
+    sleep 2s; # give some time so the github action to start
+    git push origin :$1
+}
+
