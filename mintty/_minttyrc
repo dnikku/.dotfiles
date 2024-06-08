@@ -13,20 +13,21 @@ White=238,232,213
 BoldBlack=0,43,54
 BoldRed=203,75,22
 BoldGreen=88,110,117
-BoldYellow=101,123,131
-BoldBlue=131,148,150
-BoldMagenta=108,113,196
-BoldCyan=147,161,161
-BoldWhite=253,246,227
-
 ForegroundColour=88,110,117
 BackgroundColour=225,240,225
+BoldColour=255,255,255
+BlinkColour=255,255,255
+
 CursorColour=238,232,213
 
-BoldAsFont=-1
+BoldAsFont=yes
 CursorType=block
 BellType=0
 BellFlash=no
 FontSmoothing=full
-Font=Consolas
+Font=JetBrainsMono NFM Light
 FontHeight=11
+FontWeight=300
+FontIsBold=no
+Locale=en_US
+Charset=UTF-8
