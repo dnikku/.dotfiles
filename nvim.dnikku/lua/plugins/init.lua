@@ -4,7 +4,8 @@ return {
   { import = "plugins.conform" },
   { import = "plugins.mason" },
   { import = "plugins.lspconfig" },
-  { import = "plugins.treesitter" },
+  --; [nd] - disabled for windows
+  -- { import = "plugins.treesitter" },
   { import = "plugins.telescope" },
   { import = "plugins.nvimtree" },
   { import = "plugins.lualine" },
