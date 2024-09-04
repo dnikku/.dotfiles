@@ -1,7 +1,6 @@
 local opt = vim.opt
 local o = vim.o
 local g = vim.g
-vim.cmd("colorscheme shine")
 
 g.mapleader = " "
 
@@ -45,6 +44,7 @@ o.updatetime = 250
 -- when cursor reaches end/beginning of line
 opt.whichwrap:append "<>[]hl"
 opt.termguicolors = true
+
 
 
 -- disable some default providers

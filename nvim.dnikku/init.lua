@@ -19,4 +19,5 @@ require("lazy").setup({
 
 vim.schedule(function()
   require "mappings"
+  require "colorscheme"
 end)
