@@ -5,7 +5,9 @@ map("i", "jk", "<ESC>")
 map("n", "q", "<nop>") -- disable recording for now
 
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
-map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "lsp diagnostic loclist" })
+-- diagnostics
+--map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "lsp diagnostic loclist" })
+map("n", "<leader>dh", vim.diagnostic.open_float, { desc = "lsp diagnostic hover" })
 
 
 -- navigation
@@ -62,6 +64,8 @@ map(
   { desc = "telescope find all files" }
 )
 
+
+--
 
 -- terminal
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
