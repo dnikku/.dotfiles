@@ -1,49 +1,27 @@
-
 let mapleader = " "
 set clipboard=unnamed
-set backspace=indent,eol,start
-set tabstop=4
-set expandtab
 
 
 " ui layout
-set laststatus=2
 set nocursorline
 set showmode
 
 
 " searching
 set ignorecase
-set incsearch  " search as chars are entered
+set incsearch  " alias search as chars are entered, ex: `:set is!` toggle
+autocmd FileType json set noincsearch   " disable incremental search for json cause are big
+
 set hlsearch   " highlight all matches
 
 
-" disable recording for now
-map q <nop>
+map q <nop>                       " disable recording for now
+map 0 ^                           " remap to 0 to first non-blank char
+nmap <leader>so :so ~/.ideavimrc  " reload vimrc config file
 
-" remap to 0 to first non-blank char
-map 0 ^ 
-
-" arrows are unvimlike
-nmap <up> <nop>
-nmap <down> <nop>
-nmap <left> <nop>
-nmap <right> <nop>
-imap <PageUp> <nop>
-imap <PageDown> <nop>
-nmap <PageUp> <nop>
-nmap <PageDown> <nop>
-
-" reload vimrc config file
-nmap <leader>so :so ~/.ideavimrc
-
-" fast saving
-map <leader>w :w!<cr>
-map! <leader>w :w!<cr>
 
 " my idea shortcuts
 "
-nmap <leader>al :actionlist
 
 " some goto/search actions
 nmap <leader>gf :action FindInPath<cr>
@@ -54,12 +32,14 @@ nmap <leader>gi :action GotoImplementation<cr>
 nmap <leader>gd :action GotoDeclaration<cr>
 nmap <leader>fu :action FindUsages<cr>
 
-" some refactoring actions htnsh
-nmap <leader>rf :action ReformatCode | w
+" some refactoring actions
+nmap <leader>rf :action ReformatCode \| w<cr>
 nmap <leader>rr :action RenameElement<cr>
-map! <leader>rs :action ShowIntentionActions<cr>
+nmap <leader>rs :action ShowIntentionActions<cr>
+xmap <leader>cc :action CommentByLineComment<cr>
 
-map <leader>cc :action CommentByLineComment<cr>
+" others
+nmap <leader>al :actionlist
 
 " idea shortcuts
 "
@@ -78,7 +58,3 @@ map <leader>cc :action CommentByLineComment<cr>
 "map <C-l> <C-W>l
 "map <leader>h :bprevious<cr>
 "map <leader>l :bnext<cr>
-
-
-
-
