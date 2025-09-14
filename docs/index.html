@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Idea-Vim Key Bindings</title>
+
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 56px;
+          line-height: 1.6;
+          background-color: #000000;
+          color: #ccc;
+
+
+          display: flex;
+      }
+
+      table {
+          border: solid 1px #555;
+          margin-bottom: 24px;
+          margin-right: 24px;
+
+          width: 500px;
+      }
+
+      th {
+          background-color: #FF5733;
+          color: #000;
+          text-align: left;
+      }
+
+      td.first {
+          font-weight: bold;
+          width: 150px;
+      }
+
+      tr:nth-child(even) {
+          background-color: #333;
+      }
+  </style>
+</head>
+<body>
+
+
+<div class="column">
+  <table>
+    <thead>
+    <tr>
+      <th colspan="2">Edit commands</th>
+    </tr>
+    </thead>
+    <tr>
+      <td class="first">u</td>
+      <td>Undo last command</td>
+    </tr>
+    <tr>
+      <td class="first">U</td>
+      <td>Undo all commands for current line</td>
+    </tr>
+    <tr>
+      <td class="first">.</td>
+      <td>Repeat last command</td>
+    </tr>
+    <tr>
+      <td class="first">y &lt;MC&gt;</td>
+      <td>Copy text depending on movement command</td>
+    </tr>
+    <tr>
+      <td class="first">yy , 5yy</td>
+      <td>Copy current line (yank), 5 lines from current</td>
+    </tr>
+    <tr>
+      <td class="first">p , P</td>
+      <td>Paste below, above</td>
+    </tr>
+    <tr>
+      <td class="first">d &lt;MC&gt;</td>
+      <td>Delete text depending on movement command</td>
+    </tr>
+    <tr>
+      <td class="first">D</td>
+      <td>Delete text to the end of line</td>
+    </tr>
+    <tr>
+      <td class="first">dd , 5dd</td>
+      <td>delete current line, Delete 5 lines downwards from current</td>
+    </tr>
+    <tr>
+      <td class="first">:10,20d</td>
+      <td>Delete lines 10 - 20</td>
+    </tr>
+    <tr>
+      <td class="first">x , 5x</td>
+      <td>Delete current character, 5 chars from current</td>
+    </tr>
+    <tr>
+      <td class="first">d0</td>
+      <td>Delete to beginning of line</td>
+    </tr>
+    <tr>
+      <td class="first">d$</td>
+      <td>Delete te end of line</td>
+    </tr>
+  </table>
+</div>
+
+
+<div class="column">
+  <table>
+    <thead>
+    <tr>
+      <th colspan="2">Search commands</th>
+    </tr>
+    </thead>
+    <tr>
+      <td class="first">&lt;leader&gt; gf</td>
+      <td>(Intellij) Find in Path</td>
+    </tr>
+    <tr>
+      <td class="first">&lt;leader&gt; ga</td>
+      <td>(Intellij) Search Everywhere</td>
+    </tr>
+    <tr>
+      <td class="first">&lt;leader&gt; gc</td>
+      <td>(Intellij) Goto Class</td>
+    </tr>
+    <tr>
+      <td class="first">&lt;leader&gt; gi</td>
+      <td>(Intellij) Goto Implementation</td>
+    </tr>
+    <tr>
+      <td class="first">&lt;leader&gt; gd</td>
+      <td>(Intellij) Goto Declaration</td>
+    </tr>
+    <tr>
+      <td class="first">&lt;leader&gt; fu</td>
+      <td>(Intellij) Find Usages</td>
+    </tr>
+    <tr>
+      <td class="first">-----</td>
+    </tr>
+    <tr>
+      <td class="first">/foo</td>
+      <td>Search forwards for "foo"</td>
+    </tr>
+    <tr>
+      <td class="first">?foo</td>
+      <td>Search backwards for "foo"</td>
+    </tr>
+    <tr>
+      <td class="first">n</td>
+      <td>Repeat search (keep direction)</td>
+    </tr>
+    <tr>
+      <td class="first">n</td>
+      <td>Repeat search (reverse direction)</td>
+    </tr>
+  </table>
+
+  <table>
+    <thead>
+    <tr>
+      <th colspan="2">Refactoring</th>
+    </tr>
+    </thead>
+    <tr>
+      <td class="first">&lt;leader&gt; rf</td>
+      <td>(Intellij) Reformat Code and Save</td>
+    </tr>
+    <tr>
+      <td class="first">&lt;leader&gt; rr</td>
+      <td>(Intellij) Rename Class/Function/Variable</td>
+    </tr>
+    <tr>
+      <td class="first">&lt;leader&gt; rs</td>
+      <td>(Intellij) Show Intention Actions</td>
+    </tr>
+    <tr>
+      <td class="first">&lt;leader&gt; cc</td>
+      <td>(Intellij) Toggle Comment (in VISUAL mode)</td>
+    </tr>
+  </table>
+</div>
+
+
+<div class="column">
+  <table>
+    <thead>
+    <tr>
+      <th colspan="2">Movement commands &lt;MC&gt;</th>
+    </tr>
+    </thead>
+    <tr>
+      <td class="first">l , [LEFT]</td>
+      <td>Move one character left (lower L)</td>
+    </tr>
+    <tr>
+      <td class="first">h , [RIGHT]</td>
+      <td>Move one character right</td>
+    </tr>
+    <tr>
+      <td class="first">k , [UP]</td>
+      <td>Move one line upwards</td>
+    </tr>
+    <tr>
+      <td class="first">j , [DOWN]</td>
+      <td>Move one line downwards</td>
+    </tr>
+    <tr>
+      <td class="first">5 &lt;MC&gt;</td>
+      <td>Move 5 times the command.</td>
+    </tr>
+
+    <tr>
+      <td class="first">w , b</td>
+      <td>Move one word left / right</td>
+    </tr>
+    <tr>
+      <td class="first">0 , $</td>
+      <td>Move to beginning / end of the line</td>
+    </tr>
+    <tr>
+      <td class="first">+ , -</td>
+      <td>Move to first character of next / previous line</td>
+    </tr>
+    <tr>
+      <td class="first">( , )</td>
+      <td>Move to next / previous sentence</td>
+    </tr>
+    <tr>
+      <td class="first">{ , }</td>
+      <td>Move to next / previous paragraph</td>
+    </tr>
+    <tr>
+      <td class="first">%</td>
+      <td>Move to the corresponding opening/closing bracket: ()'s, []'s and {}'s</td>
+    </tr>
+    <tr>
+      <td class="first">G</td>
+      <td>Go to last line</td>
+    </tr>
+    <tr>
+      <td class="first">5G , :5</td>
+      <td>Go to line 5</td>
+    </tr>
+  </table>
+
+  <table>
+    <thead>
+    <tr>
+      <th colspan="2">Screen commands &lt;MC&gt;</th>
+    </tr>
+    </thead>
+    <tr>
+      <td class="first">z , z. , z-</td>
+      <td>Position line with cursor at top / middle / bottom</td>
+    </tr>
+    <tr>
+      <td class="first">H</td>
+      <td>Go to top of screen (high)</td>
+    </tr>
+    <tr>
+      <td class="first">5H</td>
+      <td>Go to 5th line from top of screen</td>
+    </tr>
+    <tr>
+      <td class="first">M</td>
+      <td>Go to middle of screen (middle)</td>
+    </tr>
+    <tr>
+      <td class="first">L</td>
+      <td>Go to bottom of screen (low)</td>
+    </tr>
+    <tr>
+      <td class="first">v</td>
+      <td>Switch to visual mode (show selection)</td>
+    </tr>
+  </table>
+
+</div>
+
+
+</body>
+</html>

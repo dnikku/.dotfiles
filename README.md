@@ -4,3 +4,7 @@ Here are my configurations for:
  - zsh
  - helper scripts
  - etc
+
+## My Keybindings
+
+[idea-vim](https://dnikku.github.io/.dotfiles)
